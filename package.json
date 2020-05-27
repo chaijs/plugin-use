@@ -1,0 +1,83 @@
+{
+  "name": "plugin-use",
+  "version": "1.0.0",
+  "description": "A simple Event Emitter, tuned to be used as a plugin driver.",
+  "license": "MIT",
+  "author": "Keith Cirkel (https://keithcirkel.co.uk/)",
+  "type": "module",
+  "exports": {
+    "import": "mjs/index.js",
+    "require": "cjs/index.js"
+  },
+  "main": "cjs/index.js",
+  "module": "mjs/index.js",
+  "files": [
+    "cjs/index.*",
+    "mjs/index.*"
+  ],
+  "scripts": {
+    "build": "tsc && tsc --module es2020 --outDir mjs",
+    "lint": "eslint --ignore-path .gitignore --ext .ts .",
+    "test": "npm run build && nyc mocha cjs/test.js"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "extends": [
+      "standard"
+    ],
+    "rules": {
+      "space-before-function-paren": 0,
+      "semi": 0,
+      "comma-dangle": 0,
+      "prettier/prettier": [
+        "error",
+        {
+          "printWidth": 120,
+          "tabWidth": 2,
+          "useTabs": false,
+          "semi": false,
+          "singleQuote": true,
+          "trailingComma": "es5",
+          "arrowParens": "avoid",
+          "bracketSpacing": true
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid",
+    "bracketSpacing": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.0.1",
+    "@typescript-eslint/parser": "^3.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^7.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^7.2.0",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "lib": ["es2018"],
+    "strict": true,
+    "declaration": true,
+    "outDir": "cjs",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "mjs",
+    "cjs"
+  ]
+}
